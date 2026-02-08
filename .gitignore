@@ -1,0 +1,27 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+results
+*.pth
+tmp*
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# IDEs
+.idea/
+.vscode/
+
+.DS_Store
+
+Thumbs.db
