@@ -1,6 +1,151 @@
 # Image Editor
 A Python image editor exploring creative effects like pixel art, background removal, and dithering, as well as restoration techniques such as grayscale colorisation and super resolution.
 
+
+## Features
+
+### Pixel Art and Dithering
+Transform images into retro-style pixel art using downsampling, color quantization via K-means clustering in perceptually-uniform CIELAB color space, and Bayer dithering for smooth gradient illusion.
+
+<div align="center">
+  <img src="results/marylin natural bayer 2x2.png" alt="Natural palette" height="200"/>
+  <img src="results/marylin dither sunset 4x4.png" alt="Sunset palette" height="200"/>
+  <br>
+  <img src="results/marylin_dither.png" alt="NES palette" height="200"/>
+  <img src="results/marylin vaporwave bayer 4x4.png" alt="Vaporwave palette" height="200"/>
+  <br>
+  <em>Pixel-art renderings using different color palettes and Bayer dithering matrices</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/default_pixelated.png" alt="Pixelated only" height="250"/>
+  <img src="results/sunset_dither_4x4bayer.png" alt="With dithering" height="250"/>
+  <br>
+  <em>Left: Simple pixelation | Right: K-means palette (14 colors) with Bayer 4×4 dithering creates gradient illusion</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/helmet.png" alt="Original" height="180"/>
+  <img src="results/helmet_kmeans.png" alt="K-means" height="180"/>
+  <img src="results/helmet retro 2x2 dither.png" alt="Retro 2x2" height="180"/>
+  <br>
+  <img src="results/helmet retro bayer 2x2 pixelated.png" alt="Retro pixelated" height="180"/>
+  <img src="results/helmet retro bayer 4x4.png" alt="Retro 4x4" height="180"/>
+  <img src="results/helmet retro bayer 4x4 pixelated.png" alt="Retro 4x4 pixelated" height="180"/>
+  <br>
+  <em>Effect of pixelation and structured dithering with different matrix sizes</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/fish_cga.png" alt="CGA palette" height="220"/>
+  <img src="results/crab_retro.png" alt="Retro palette" height="220"/>
+  <img src="results/fruit edge kmeans bigger dither.png" alt="Fruit with outline" height="220"/>
+  <img src="results/tucan_kmeans_8_outline_022.png" alt="Toucan with outline" height="220"/>
+  <br>
+  <em>Pixel-art renderings suitable for game assets with optional black outlines via edge detection</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/marylin_photo.jpg" alt="Original photo" height="250"/>
+  <img src="results/dither marilyn.png" alt="Pixel art result" height="250"/>
+  <br>
+  <em>Pixel art applied to photographs (works best with high-contrast preprocessing)</em>
+</div>
+
+### Super Resolution
+Enhance image quality through progressive upscaling using Lanczos kernel with bilateral filtering for noise suppression, or AI-powered enhancement with Real-ESRGAN for superior detail generation.
+
+<div align="center">
+  <img src="results/marylin-small.jpg" alt="Downsampled" height="200"/>
+  <img src="results/marylin super resolution.png" alt="Algorithmic upscaling" height="200"/>
+  <img src="results/ai super resolution marilyn.png" alt="AI upscaling" height="200"/>
+  <br>
+  <em>Left: Low-res input | Middle: Algorithmic progressive upscaling | Right: Real-ESRGAN AI super resolution</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/sheep_upscaled.png" alt="Algorithmic upscaling" height="280"/>
+  <img src="results/sheep_ai_super_resolution.png" alt="GAN upscaling" height="280"/>
+  <br>
+  <em>Left: Algorithmic upscaling emphasizes edges | Right: GAN-based inference of realistic texture detail</em>
+</div>
+
+### Grayscale Image Colorization
+Multiple colorization approaches were implemented: AI-powered realistic colorization using DeOldify GAN, brightness-based mapping of gray shades to user-defined color values, and interactive scribble-based optimization that propagates user-provided color hints with edge awareness and preserves luminance by editing the chrominance in YCbCr color space.
+
+<div align="center">
+  <img src="results/ai_colorized_mountains.png" alt="Landscape colorization" height="220"/>
+  <img src="results/ai_colorized_sharon.png" alt="Portrait colorization" height="220"/>
+  <img src="results/ai_colorized_crab.png" alt="Illustration colorization" height="220"/>
+  <br>
+  <em>AI-based recolorization: Excellent on natural scenes (left), good on portraits (middle), limited on illustrations (right)</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/toned marilyn.png" alt="Single tone" height="180"/>
+  <img src="results/duotone marilyn.png" alt="Duotone" height="180"/>
+  <img src="results/gradient colored marilyn.png" alt="Multi-color gradient" height="180"/>
+  <img src="results/gradient colored marylin.png" alt="Alternative gradient" height="180"/>
+  <img src="results/scribbled marilyn photo blue scribles.png" alt="User scribbles" height="180"/>
+  <img src="results/scribbled marilyn photo blue.png" alt="Colorized result" height="180"/>
+  <br>
+  <em>(1) Single-tone mapping, (2) Duotone mapping, (3), (4) Multi-color gradient mapping, (5) Scribbles input by user via the UI, (6) The result of scribble-based colorization with luminance preservation</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/sunset gray.png" alt="Grayscale sunset" height="200"/>
+  <img src="results/popart_gray.png" alt="Grayscale pop art" height="200"/>
+  <img src="results/crab_gray.png" alt="Grayscale crab" height="200"/>
+  <br>
+  <img src="results/flat image recolorized gradient.png" alt="Colored sunset" height="200"/>
+  <img src="results/recolorized merylin.png" alt="Colored pop art" height="200"/>
+  <img src="results/colored crab.png" alt="Colored crab" height="200"/>
+  <br>
+  <em>Gradient-based recolorization excels at high-contrast illustrations and stylized artwork</em>
+</div>
+
+### Background Removal and Semantic Segmentation
+Interactive background removal using K-means clustering combined with marker-based watershed algorithm that snaps to high-contrast edges. AI-powered semantic segmentation via DeepLabV3+ with the option of multi-scale inference for more conservative class boundaries without spillage.
+
+<div align="center">
+  <img src="results/fruit no background.png" alt="Fruit no bg" height="190"/>
+  <img src="results/fruit mask.png" alt="Fruit mask" height="190"/>
+  <img src="results/fruit scribbles.png" alt="Fruit scribbles" height="190"/>
+  <br>
+  <img src="results/no background fish.png" alt="Fish no bg" height="162"/>
+  <img src="results/no background scribbles fish.png" alt="Fish scribbles" height="162"/>
+  <img src="results/crab without background.png" alt="Crab no bg" height="162"/>
+  <br>
+  <img src="results/sheep no background.png" alt="Sheep no bg" height="173"/>
+  <img src="results/scribbled sheep.png" alt="Sheep scribbles" height="173"/>
+  <img src="results/scribbles crab no background.png" alt="Crab scribbles" height="173"/>
+  <br>
+  <em>Scribble-based watershed algorithm with edge snapping for precise background removal</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="results/annotated animals.png" alt="Single scale segmentation" height="250"/>
+  <img src="results/annotated animals multiscale.png" alt="Multi-scale segmentation" height="250"/>
+  <br>
+  <em>AI semantic segmentation: Single scale (left) vs multi-scale inference (right) for improved accuracy</em>
+</div>
+
 ## Setup
 
 ### 1. Create Virtual Environment
