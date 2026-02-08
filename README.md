@@ -8,11 +8,11 @@ A Python image editor exploring creative effects like pixel art, background remo
 Transform images into retro-style pixel art using downsampling, color quantization via K-means clustering in perceptually-uniform CIELAB color space, and Bayer dithering for smooth gradient illusion.
 
 <div align="center">
-  <img src="results/marylin natural bayer 2x2.png" alt="Natural palette" height="200"/>
-  <img src="results/marylin dither sunset 4x4.png" alt="Sunset palette" height="200"/>
+  <img src="results/marylin natural bayer 2x2.png" alt="Natural palette" height="250"/>
+  <img src="results/marylin dither sunset 4x4.png" alt="Sunset palette" height="250"/>
   <br>
-  <img src="results/marylin_dither.png" alt="NES palette" height="200"/>
-  <img src="results/marylin vaporwave bayer 4x4.png" alt="Vaporwave palette" height="200"/>
+  <img src="results/marylin_dither.png" alt="NES palette" height="250"/>
+  <img src="results/marylin vaporwave bayer 4x4.png" alt="Vaporwave palette" height="250"/>
   <br>
   <em>Pixel-art renderings using different color palettes and Bayer dithering matrices</em>
 </div>
@@ -45,8 +45,9 @@ Transform images into retro-style pixel art using downsampling, color quantizati
 <div align="center">
   <img src="results/fish_cga.png" alt="CGA palette" height="220"/>
   <img src="results/crab_retro.png" alt="Retro palette" height="220"/>
-  <img src="results/fruit edge kmeans bigger dither.png" alt="Fruit with outline" height="220"/>
-  <img src="results/tucan_kmeans_8_outline_022.png" alt="Toucan with outline" height="220"/>
+  <br>
+  <img src="results/fruit edge kmeans bigger dither.png" alt="Fruit with outline" height="250"/>
+  <img src="results/tucan_kmeans_8_outline_022.png" alt="Toucan with outline" height="250"/>
   <br>
   <em>Pixel-art renderings suitable for game assets with optional black outlines via edge detection</em>
 </div>
@@ -64,9 +65,9 @@ Transform images into retro-style pixel art using downsampling, color quantizati
 Enhance image quality through progressive upscaling using Lanczos kernel with bilateral filtering for noise suppression, or AI-powered enhancement with Real-ESRGAN for superior detail generation.
 
 <div align="center">
-  <img src="results/marylin-small.jpg" alt="Downsampled" height="200"/>
-  <img src="results/marylin super resolution.png" alt="Algorithmic upscaling" height="200"/>
-  <img src="results/ai super resolution marilyn.png" alt="AI upscaling" height="200"/>
+  <img src="results/marylin-small.jpg" alt="Downsampled" width="250" style="image-rendering: pixelated;"/>
+  <img src="results/marylin super resolution.png" alt="Algorithmic upscaling" width="250"/>
+  <img src="results/ai super resolution marilyn.png" alt="AI upscaling" width="250"/>
   <br>
   <em>Left: Low-res input | Middle: Algorithmic progressive upscaling | Right: Real-ESRGAN AI super resolution</em>
 </div>
@@ -84,9 +85,9 @@ Enhance image quality through progressive upscaling using Lanczos kernel with bi
 Multiple colorization approaches were implemented: AI-powered realistic colorization using DeOldify GAN, brightness-based mapping of gray shades to user-defined color values, and interactive scribble-based optimization that propagates user-provided color hints with edge awareness and preserves luminance by editing the chrominance in YCbCr color space.
 
 <div align="center">
-  <img src="results/ai_colorized_mountains.png" alt="Landscape colorization" height="220"/>
-  <img src="results/ai_colorized_sharon.png" alt="Portrait colorization" height="220"/>
-  <img src="results/ai_colorized_crab.png" alt="Illustration colorization" height="220"/>
+  <img src="results/ai_colorized_mountains.png" alt="Landscape colorization" height="180"/>
+  <img src="results/ai_colorized_sharon.png" alt="Portrait colorization" height="180"/>
+  <img src="results/ai_colorized_crab.png" alt="Illustration colorization" height="180"/>
   <br>
   <em>AI-based recolorization: Excellent on natural scenes (left), good on portraits (middle), limited on illustrations (right)</em>
 </div>
