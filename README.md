@@ -8,22 +8,24 @@ A Python image editor exploring creative effects like pixel art, background remo
 Transform images into retro-style pixel art using downsampling, color quantization via K-means clustering in perceptually-uniform CIELAB color space, and Bayer dithering for smooth gradient illusion.
 
 <div align="center">
+  <img src="resources/marylin_pop_art_small.jpg" alt="Original Image" height="250"/>
   <img src="results/marylin natural bayer 2x2.png" alt="Natural palette" height="250"/>
   <img src="results/marylin dither sunset 4x4.png" alt="Sunset palette" height="250"/>
   <br>
   <img src="results/marylin_dither.png" alt="NES palette" height="250"/>
   <img src="results/marylin vaporwave bayer 4x4.png" alt="Vaporwave palette" height="250"/>
   <br>
-  <em>Pixel-art renderings using different color palettes and Bayer dithering matrices</em>
+  <em>(1) Original Image, (2) - (5) Pixel-art renderings using different color palettes and Bayer dithering matrices</em>
 </div>
 
 <br>
 
 <div align="center">
+  <img src="resources/sunset.jpg" alt="Original Image" height="250"/>
   <img src="results/default_pixelated.png" alt="Pixelated only" height="250"/>
   <img src="results/sunset_dither_4x4bayer.png" alt="With dithering" height="250"/>
   <br>
-  <em>Left: Simple pixelation | Right: K-means palette (14 colors) with Bayer 4×4 dithering creates gradient illusion</em>
+  <em>(1) Original Image | (2) Simple pixelation | (3) K-means palette (14 colors) with Bayer 4×4 dithering creates gradient illusion</em>
 </div>
 
 <br>
